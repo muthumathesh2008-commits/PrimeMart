@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PrimeMart</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+  <h1>🛒 PrimeMart</h1>
+    <nav>
+      <ul>
+        <li><a href="#" onclick="showSection('home')">Home</a></li>
+        <li><a href="#" onclick="showSection('products')">Product Items</a></li>
+	<li><a href="#" onclick="showSection('orders')">Orders</a></li>
+        <li><a href="#" onclick="showSection('wishlist')">Wishlist</a></li>
+        <li><a href="#" onclick="showSection('comments')">Comments</a></li>
+        <li><a href="#" onclick="showSection('contact')">Contact Us</a></li>
+        <li><a href="#" onclick="showSection('about')">About Us</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Home Section -->
+  <section id="home" class="active section">
+    <h2>Welcome to PrimeMart</h2>
+    <p>Your one-stop destination for Electronics, Fashion, and Groceries!</p>
+    <button onclick="showSection('login')">Login</button>
+    <button onclick="showSection('register')">Register</button>
+  </section>
+
+  <!-- Products Section -->
+  <section id="products" class="section">
+    <h2>🛍 Product Categories</h2>
+    <p>Browse our popular products and add them to your Wishlist or Orders.</p>
+
+    <!-- Static Categories with Images -->
+    <div class="category">
+      <h3>Electronics</h3>
+      <div class="product-list">
+        <div class="product-card">
+          <img src="phone.jpg" alt="Smartphone">
+          <h4>Smartphone</h4>
+          <p>Price: ₹25,999</p>
+          <p class="review">⭐️⭐️⭐️⭐️☆ (1.2k Reviews)</p>
+	  <button onclick="addToWishlist('Smartphone')">Add to Wishlist</button>
+          <button onclick="addToOrders('Smartphone')">Order Now</button>
+        </div>
+        <div class="product-card">
+          <img src="lap.jpg" alt="Laptop">
+          <h4>Laptop</h4>
+          <p>Price: ₹55,999</p>
+          <p class="review">⭐️⭐️⭐️⭐️⭐️ (2.4k Reviews)</p>
+	  <button onclick="addToWishlist('Laptop')">Add to Wishlist</button>
+          <button onclick="addToOrders('Laptop')">Order Now</button>
+        </div>
+        <div class="product-card">
+          <img src="headphone.jpg" alt="Headphones">
+          <h4>Headphones</h4>
+          <p>Price: ₹2,499</p>
+          <p class="review">⭐️⭐️⭐️⭐️ (980 Reviews)</p>
+	  <button onclick="addToWishlist('Headphones')">Add to Wishlist</button>
+          <button onclick="addToOrders('Headphones')">Order Now</button>
+        </div>
+        <div class="product-card">
+          <img src="smartphone.jpg" alt="Smart Watch">
+          <h4>Smart Watch</h4>
+          <p>Price: ₹3,999</p>
+          <p class="review">⭐️⭐️⭐️⭐️☆ (1.8k Reviews)</p>
+	  <button onclick="addToWishlist('Smart Watch')">Add to Wishlist</button>
+          <button onclick="addToOrders('Smart Watch')">Order Now</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Fashion -->
+    <div class="category">
+      <h3>Fashion</h3>
+      <div class="product-list">
+        <div class="product-card">
+          <img src="men.jpg" alt="Men T-shirt">
+          <h4>Men T-shirt</h4>
+          <p>Price: ₹799</p>
+          <p class="review">⭐️⭐️⭐️⭐️☆ (560 Reviews)</p>
+	  <button onclick="addToWishlist('Men T-Shirt')">Add to Wishlist</button>
+          <button onclick="addToOrders('Men T-Shirt')">Order Now</button>
+
+        </div>
+        <div class="product-card">
+          <img src="women.jpg" alt="Women Dress">
+          <h4>Women Dress</h4>
+          <p>Price: ₹1,499</p>
+          <p class="review">⭐️⭐️⭐️⭐️⭐️ (820 Reviews)</p>
+	  <button onclick="addToWishlist('Women Dress')">Add to Wishlist</button>
+          <button onclick="addToOrders('Women Dress')">Order Now</button>
+        </div>
+        <div class="product-card">
+          <img src="shoe.jpg" alt="Sneakers">
+          <h4>Sneakers</h4>
+          <p>Price: ₹2,299</p>
+          <p class="review">⭐️⭐️⭐️⭐️☆ (1.1k Reviews)</p>
+	  <button onclick="addToWishlist('Sneakers')">Add to Wishlist</button>
+          <button onclick="addToOrders('Sneakers')">Order Now</button>
+        </div>
+        <div class="product-card">
+          <img src="watch.jpg" alt="Watch">
+          <h4>Wrist Watch</h4>
+          <p>Price: ₹1,999</p>
+          <p class="review">⭐️⭐️⭐️⭐️⭐️ (760 Reviews)</p>
+	  <button onclick="addToWishlist('Wrist Watch')">Add to Wishlist</button>
+          <button onclick="addToOrders('Wrist Watch')">Order Now</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Groceries -->
+    <div class="category">
+      <h3>Groceries</h3>
+      <div class="product-list">
+        <div class="product-card">
+          <img src="rice.jpg" alt="Rice">
+          <h4>Organic Rice 5kg</h4>
+          <p>Price: ₹499</p>
+          <p class="review">⭐️⭐️⭐️⭐️☆ (420 Reviews)</p>
+	  <button onclick="addToWishlist('Organic Rice 5kg')">Add to Wishlist</button>
+          <button onclick="addToOrders('Organic Rice 5kg')">Order Now</button>
+        </div>
+        <div class="product-card">
+          <img src="oil.jpg" alt="Oil">
+          <h4>Sunflower Oil 1L</h4>
+          <p>Price: ₹189</p>
+          <p class="review">⭐️⭐️⭐️⭐️ (510 Reviews)</p>
+	  <button onclick="addToWishlist('Sunflower Oil 1L')">Add to Wishlist</button>
+          <button onclick="addToOrders('Sunflower Oil 1L')">Order Now</button>
+        </div>
+        <div class="product-card">
+          <img src="snacks.jpg" alt="Snacks">
+          <h4>Snacks Combo Pack</h4>
+          <p>Price: ₹299</p>
+          <p class="review">⭐️⭐️⭐️⭐️⭐️ (1.3k Reviews)</p>
+	   <button onclick="addToWishlist('Snacks Combo Pack')">Add to Wishlist</button>
+          <button onclick="addToOrders('Snacks Combo Pack')">Order Now</button>
+        </div>
+        <div class="product-card">
+          <img src="tea.jpg" alt="Tea Powder">
+          <h4>Tea Powder</h4>
+          <p>Price: ₹249</p>
+          <p class="review">⭐️⭐️⭐️⭐️☆ (680 Reviews)</p>
+	  <button onclick="addToWishlist('Tea Powder')">Add to Wishlist</button>
+          <button onclick="addToOrders('Tea Powder')">Order Now</button>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+<!-- Orders Section -->
+  <section id="orders" class="section">
+    <h2>📦 Your Orders</h2>
+    <ul id="orderList"></ul>
+    <p id="noOrders">No orders placed yet!</p>
+  </section>
+
+  <!-- Wishlist Section -->
+  <section id="wishlist" class="section">
+    <h2>❤️ Your Wishlist</h2>
+    <ul id="wishlistItems"></ul>
+    <p id="noWishlist">No items in wishlist yet!</p>
+  </section>
+
+  <!-- Comments Section -->
+  <section id="comments" class="section">
+    <h2>💬 Comments & Reviews</h2>
+    <form id="commentForm" onsubmit="addComment(event)">
+      <input type="text" id="userName" placeholder="Your Name" required />
+      <textarea id="userComment" placeholder="Write your review..." required></textarea>
+      <button type="submit">Submit Comment</button>
+    </form>
+    <ul id="commentList"></ul>
+  </section>
+
+  <!-- Login Section -->
+  <section id="login" class="section">
+    <h2>User Login</h2>
+    <form id="loginForm" onsubmit="validateLogin(event)">
+      <label>Email:</label>
+      <input type="email" id="loginEmail" required>
+      <label>Password:</label>
+      <input type="password" id="loginPassword" required minlength="6">
+      <button type="submit">Login</button>
+    </form>
+  </section>
+
+  <!-- Register Section -->
+  <section id="register" class="section">
+    <h2>User Registration</h2>
+    <form id="registerForm" onsubmit="validateRegister(event)">
+      <label>Full Name:</label>
+      <input type="text" id="regName" required>
+      <label>Email:</label>
+      <input type="email" id="regEmail" required>
+      <label>Password:</label>
+      <input type="password" id="regPassword" required minlength="6">
+      <label>Confirm Password:</label>
+      <input type="password" id="regConfirmPassword" required>
+      <button type="submit">Register</button>
+    </form>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="section">
+    <h2>Contact Us 📞</h2>
+    <p>Email: support@primemart.com</p>
+    <p>Customer Care: +91 98765 43210</p>
+    <p><a href="#" onclick="showSection('report')">Report an Issue</a></p>
+  </section>
+
+  <!-- Report Section -->
+  <section id="report" class="section">
+    <h2>Report an Issue</h2>
+    <form id="reportForm" onsubmit="submitReport(event)">
+      <label>Your Name:</label>
+      <input type="text" id="reportName" required>
+      <label>Email:</label>
+      <input type="email" id="reportEmail" required>
+      <label>Issue Description:</label>
+      <textarea id="reportMessage" required></textarea>
+      <button type="submit">Submit Report</button>
+    </form>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="section">
+    <h2>About PrimeMart</h2>
+    <p>PrimeMart is a next-generation e-commerce platform built by Deetchana and Nivya, offering high-quality products and excellent service.</p>
+  </section>
+
+  <footer>
+    <p>© 2025 PrimeMart | Designed by Muthu Mathesh | All Rights Reserved</p>
+  </footer>
+
+  <script>
+    function showSection(id) {
+      document.querySelectorAll('section').forEach(sec => sec.classList.remove('active'));
+      document.getElementById(id).classList.add('active');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function validateRegister(e) {
+      e.preventDefault();
+      const pass = document.getElementById('regPassword').value;
+      const confirm = document.getElementById('regConfirmPassword').value;
+      if (pass !== confirm) {
+        alert('Passwords do not match!');
+      } else {
+        alert('Registration successful!');
+        showSection('login');
+      }
+    }
+
+    function validateLogin(e) {
+      e.preventDefault();
+      const email = document.getElementById('loginEmail').value;
+      const pass = document.getElementById('loginPassword').value;
+      if (email && pass.length >= 6) {
+        alert('Login successful!');
+        showSection('products');
+      } else {
+        alert('Invalid credentials!');
+      }
+    }
+
+    function submitReport(e) {
+      e.preventDefault();
+      alert('Thank you! Your report has been submitted successfully.');
+      showSection('home');
+    }
+
+ // Wishlist and Orders
+    let wishlist = [];
+    let orders = [];
+
+    function addToWishlist(item) {
+      wishlist.push(item);
+      updateWishlist();
+      alert(item + " added to Wishlist!");
+    }
+
+    function addToOrders(item) {
+      orders.push(item);
+      updateOrders();
+      alert(item + " added to Orders!");
+    }
+
+    function updateWishlist() {
+      const list = document.getElementById('wishlistItems');
+      list.innerHTML = '';
+      wishlist.forEach(i => {
+        const li = document.createElement('li');
+        li.textContent = i;
+        list.appendChild(li);
+      });
+      document.getElementById('noWishlist').style.display = wishlist.length ? 'none' : 'block';
+    }
+
+    function updateOrders() {
+      const list = document.getElementById('orderList');
+      list.innerHTML = '';
+      orders.forEach(i => {
+        const li = document.createElement('li');
+        li.textContent = i + " - Order Confirmed ✅";
+        list.appendChild(li);
+      });
+      document.getElementById('noOrders').style.display = orders.length ? 'none' : 'block';
+    }
+
+    // Comments Section
+    function addComment(e) {
+      e.preventDefault();
+      const name = document.getElementById('userName').value;
+      const comment = document.getElementById('userComment').value;
+      const li = document.createElement('li');
+      li.innerHTML = `<strong>${name}:</strong> ${comment}`;
+      document.getElementById('commentList').appendChild(li);
+      document.getElementById('commentForm').reset();
+    }
+  </script>
+</body>
+</html>
+
